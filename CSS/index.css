@@ -1,0 +1,76 @@
+.body{
+    font-family: Calibri;
+    font-size: 25px;
+}
+.container{ 
+    text-align: center;
+    border-bottom: 1px solid ;
+    border-color: #eecfa1;
+}
+#head{
+    margin-top: 40px;
+}
+#head1{
+    margin-top:80px;
+    
+}
+#timkiem{
+    border-radius: 50px;
+    border-color: #eecfa1;
+    border-style:double;
+    padding-left: 10px;
+}
+.mid1{
+    margin-top: 10px;
+}
+#link{
+    text-decoration: none;
+    color:black;
+}
+#link:hover {
+    color:#eecfa1;
+}
+dl#main-menu .sub-menu{
+    display: none;
+}
+dl#main-menu dt:hover .sub-menu{
+    display: block;
+}
+#col1{
+  
+    color:red;
+}
+#link1{
+    text-decoration: none;
+    color:#d8b47d;
+    margin-top: 20px;
+    margin-left: 110px;
+   
+}
+.conveyor-belt {
+    width: 100%; /* Độ rộng của băng chuyền */
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid ;
+    border-color: #eecfa1;
+  }
+  
+  #pic {
+    display: inline-block;
+    margin-right: 5px; /* Khoảng cách giữa các mục */
+    animation: conveyor 10s linear infinite; /* Tên animation, thời gian và chế độ lặp */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    height:300px ; 
+    width:300px;
+  }
+  
+  @keyframes conveyor {
+    0% {
+      transform: translateX(100%); /* Di chuyển sang phải 100% */
+    }
+    100% {
+      transform: translateX(-100%); /* Di chuyển sang trái 100% */
+    }
+  }
+  

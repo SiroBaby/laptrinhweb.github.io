@@ -1,0 +1,29 @@
+.body{
+    font-family: Calibri;
+    font-size: 25px;
+   
+}
+
+.header{
+    text-align: center;
+    border-bottom: 2px solid ;
+    border-color: #eecfa1;
+    height:10%;
+}
+.row1{
+    padding-left: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.form{
+    margin-left: 30%;
+}
+#legend{
+    text-align: 40%;
+}
+#submit{
+    background-color: #eecfa1;
+    border-style: none;
+    border-radius: 5px 5px 5px 5px ;
+    margin-left: 25%;
+}
