@@ -10,8 +10,10 @@
     border-color: #eecfa1;
     height:10%;
 }
+
 .table{
     border : 1px solid;
+    text-align: center;
 }
 .table th {
     border: 1px solid;
@@ -22,6 +24,7 @@
     padding-left: 50px;
 
 }
+
 #sua{
     border-style: none;
     background-color: #eecfa1;
