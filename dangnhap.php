@@ -11,31 +11,24 @@
             </a>
         </div>
     </div>
-    <div class="container">
-        <div class="wrapper">
-            <form action="input-box">
-                <h1>DL Store</h1>
-                <div class="input-box">
-                    <input type="text" placeholder="Nhập số điện thoại"
-                    required>
-                    <i class='bx bx-user'></i>
-                </div>
-                <div class="input-box">
-                    <input type="password"
-                    placeholder="Nhập mật khẩu"
-                    required>
-                    <i class='bx bxs-lock' ></i>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Hãy nhớ tôi</label>
-                    <a href="#">Quên mật khẩu</a>
-                </div>
-                <button type="submit" class="btn">Đăng nhập</button>
-                <div class="register-link">
-                    <p>Không có tài khoản? <a href="#">Đăng ký</a></p>
-                </div>
-            </form>
+    <form class="dangky" method="" action="">
+    <div class="row2">
+        <div class="col2">
+            <h3>Đăng Nhập </h3>
         </div>
     </div>
+    <div class="thongtin">
+    <div class="row3">
+        <input type="text" id="sodienthoai" name="sodienthoai" value="" placeholder="Số Điện Thoại" size="70" required>
+    </div>
+    <div class="row3">
+        <input type="password" id="matkhau" name="matkhau" value="" placeholder="Mật Khẩu" size="70" required >
+    </div>
+   
+    <div class="row3">
+        <button type="submit" id="dangnhap"> Đăng Nhập </button>
+    </div>
+    </div>
+</form>
     </body>
 </html>

@@ -35,10 +35,12 @@
         <input type="text" id="sodienthoai" name="sodienthoai" value="" placeholder="Số Điện Thoại" size="70" required>
     </div>
     <div class="row3">
-        <input type="text" id="diachi" name="diachi" value="" placeholder="Địa Chỉ" size="70" required ss>
+        <input type="text" id="diachi" name="diachi" value="" placeholder="Địa Chỉ" size="70" required >
     </div>
     <div class="row3">
-        <button type="submit" id="dangky"> Đăng Ký </button>
+        <div class="col"><button type="submit" id="dangky"> Đăng Ký </button></div>
+    </div>
+    <p><a href="dangnhap.php" id="dangnhap">Đã có tài khoản</a></p>
     </div>
     </div>
 </form>

@@ -1,0 +1,28 @@
+.body{
+    font-family: Calibri;
+    font-size: 25px;
+}
+#logo{
+    text-align: center;
+    border-bottom: 1px solid;
+    border-color: #eecfa1;
+}
+#link{
+    margin-left: 5%;
+    text-decoration: none;
+    color :black;
+}
+#link:hover{
+    color:#eecfa1;
+}
+.thanhtoan{
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+#dathang{
+    border-radius:  5px 5px 5px 5px ;
+    background-color :#eecfa1;
+    border-style: none;
+    float:right; 
+    margin-bottom: 2%;
+}

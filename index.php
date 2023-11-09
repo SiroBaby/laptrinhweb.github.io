@@ -16,13 +16,13 @@
             <div class="col" >
                 <div class="row">
                     <div class="col">
-                    <a href="dangky.html">
+                    <a href="dangky.php">
                         <img id="head" src="https://i.pinimg.com/originals/cf/01/a1/cf01a172c5910595e5de7aa7717edfe3.png" height="50" width="50">
                     </a>
                     </div>
                     
                     <div class="col">
-                        <a href="giohang.html">
+                        <a href="giohang.php">
                         <img id="head" src="https://i.pinimg.com/originals/4f/0c/c6/4f0cc62d854d4cf770a009974c007edd.png" height="50" width="50" > 
                     </a>
                     </div>
@@ -72,7 +72,7 @@
                 </dl>
               </div>
               <div class="col">
-                  <b><i><a  id="col1" href="khuyenmai.html">Khuyến Mãi</a></i></b> 
+                  <b><i><a  id="col1" href="khuyenmai.php">Khuyến Mãi</a></i></b> 
               </div>
               </div>
           </div>

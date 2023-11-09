@@ -1,0 +1,43 @@
+#sua{
+    border-style: none;
+    background-color: #eecfa1;
+    text-decoration: none;
+    text-align: center;
+}
+#xoa{
+    border-style: none;
+    background-color: #eecfa1;
+    margin-left: 5px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px ;
+}
+.body{
+    font-family: Calibri;
+    font-size: 25px;
+}
+#logo{
+    text-align: center;
+    border-bottom: 1px solid;
+    border-color: #eecfa1;
+}
+#link{
+    margin-left: 5%;
+    text-decoration: none;
+    color :black;
+}
+#link:hover{
+    color:#eecfa1;
+}
+#soluong{
+    width: 60px;
+}
+#thanhtoan{
+    text-decoration: none;
+    border-radius:  5px 5px 5px 5px ;
+    background-color :#eecfa1;
+    border-style: 1px solid;
+    float:right; 
+    margin-bottom: 2%;
+    
+}

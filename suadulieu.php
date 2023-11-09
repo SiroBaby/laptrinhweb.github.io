@@ -1,22 +1,3 @@
-<?php
-include("dbcon.php");
-$tt = new dbcon;
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-
-    $sql = "SELECT * FROM sanpham WHERE Ma_Sp = '$id'";
-    $result = $tt->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-    } else {
-        echo "Không tìm thấy sản phẩm.";
-        exit;
-    }
-$tt->db->close();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,24 +11,29 @@ $tt->db->close();
      </div>
      <div class="row1">Admin/ Quản Lý Kho Sản Phẩm/ Sửa Sản Phẩm</div>
         <div class="contents">
-        <form method="POST" action="suadulieu_1.php" class="form"> 
-        <legend id="legend"><h2>Sửa Sản Phẩm</h2></legend>
-        <input type="hidden" name="id" value="<?php echo $row['Ma_Sp']; ?>">
-        <label for="GiaSP">Giá Sản Phẩm</label></br>
-        <input type="text" name="GiaSP" value="<?php echo $row['Gia_SP']; ?>" required><br>
-        <label for="SL">Số Lượng</label></br>
-        <input type="text" name="SL" value="<?php echo $row['So_luong']; ?>" required><br>
-        <label for="TL">Trọng Lượng</label></br>
-        <input type="text" name="TL" value="<?php echo $row['Trong_luong']; ?>" required><br>
-        <label for="mau">Màu Sắc</label></br>
-        <input type="text" name="mau" value="<?php echo $row['Mau_sac']; ?>" required><br>
-        <label for="dotinhkhiet">Độ Tinh Khiết</label></br>
-        <input type="text" name="dotinhkhiet" value="<?php echo $row['Đo_tinh_khiet']; ?>" required><br>
-        <label for="KT">Kích Thước</label></br>
-        <input type="text" name="KT" value="<?php echo $row['Kich_thuoc']; ?>" required><br>
-        <label for="dang">Hình Dạng</label></br>
-        <input type="text" name="dang" value="<?php echo $row['Hinh_dang']; ?>" required><br>
-        <button type="submit" id="submit" name="sua"> Cập Nhật </button>
+            <form method="" action="" class="form">
+                <legend id="legend"><h2>Sửa Sản Phẩm</h2></legend>
+        <label for="MaSP" > Mã Sản Phẩm </label><br>
+        <input type="text" id="MaSP" name="MaSP" value="" placeholder=" Mã Sản Phẩm" required size="50"  ><br>
+        <label for="maloai" > Mã Loại </label><br>
+        <input type="text" id="maloai" name="maloai" value="" placeholder=" Mã Loại" required size="50"><br>
+        <label for="tenloai" > Tên Loại </label><br>
+        <input type="text" id="tenloai" name="tenloai" value="" placeholder=" Tên Loại" required size="50"><br>
+        <label for="GiaSP" >Giá Sản Phẩm </label><br>
+        <input type="text" id="GiaSP" name="GiaSP" value="" placeholder=" Giá Sản Phẩm" required size="50"><br>
+        <label for="SL" >Số Lượng</label><br>
+        <input type="text" id="SL" name="SL" value="" placeholder=" Số Lượng " required size="50"><br>
+        <label for="TL" >Trọng Lượng </label><br>
+        <input type="text" id="TL" name="TL" value="" placeholder=" Trọng Lượng" required size="50"><br>
+        <label for="mau" >Màu Sắc</label><br>
+        <input type="text" id="mau" name="mau" value="" placeholder=" Màu Sắc" required size="50"><br>
+        <label for="dang" >Hình Dạng</label><br>
+        <input type="text" id="dang" name="dang" value="" placeholder=" Hình Dạng" required size="50"><br>
+        <label for="KT" >Kích Thước</label><br>
+        <input type="text" id="KT" name="KT" value="" placeholder=" Kích Thước" required size="50"><br>
+        <label for="hinh" >Hình Ảnh </label><br>
+        <input type="file" id="hinh" name="hinh" value="" placeholder=" Hình Ảnh" required size="50"><br><br>
+        <button type="submit" id="submit"> Cập Nhật </button>
             </form>
         </div>
     </div>
