@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $targetFile = $targetDirectory . basename($_FILES["hinh"]["name"]);
 
         if (move_uploaded_file($_FILES['hinh']['tmp_name'], $targetFile)) {
-            $sql = "INSERT INTO sanpham (Ma_Sp, Gia_SP, So_luong, Trong_luong, Mau_sac, Đo_tinh_khiet, Kich_thuoc, Hinh_dang, Hinh_anh, Ma_loai) 
+            $sql = "INSERT INTO sanpham (Ma_Sp, Gia_SP, So_luong, Trong_luong, Mau_sac, Do_tinh_khiet, Kich_thuoc, Hinh_dang, Hinh_anh, Ma_loai) 
                 VALUES ('$MaSP', '$GiaSP', '$SL', '$TL', '$mau', '$dotinhkhiet', '$KT', '$dang', '$targetFile', '$maloai')";
 
             if ($tt->query($sql) === TRUE) {
