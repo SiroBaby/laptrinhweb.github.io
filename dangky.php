@@ -11,7 +11,7 @@
             </a>
         </div>
     </div>
-    <form class="dangky" method="post" action="xulydangnhap.php">
+    <form class="dangky" method="post" action="xulydangky.php">
     <div class="row2">
         <div class="col2">
             <h3>ĐĂNG KÝ </h3>
@@ -24,11 +24,11 @@
     </div>
     <div class="row3">
         <input type="password" id="matkhau" name="Password" value="" placeholder="Mật Khẩu" size="70" required >
-        <span onclick="togglePassword()">👁️</span>
+        
     </div>
     <div class="row3">
-        <input type="passwprd" id="nhaplai" name="nhaplai" value="" placeholder="Nhập Lại Mật Khẩu" size="70" required>
-        <span onclick="togglePassword()">👁️</span>
+        <input type="password" id="nhaplai" name="nhaplai" value="" placeholder="Nhập Lại Mật Khẩu" size="70" required>
+       
     </div>
     <div class="row3">
         <input type="email" id="email" name="Email" value="" placeholder="Email" size="70" required  >
