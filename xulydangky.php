@@ -28,8 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Thực hiện kiểm tra dữ liệu đầu vào
     if (empty($username) || empty($password) || empty($nhaplai) || empty($email) || empty($SDT)) {
         $message = "Vui lòng điền đầy đủ thông tin.";
+        echo '<div style="color: red; text-align:center; margin: auto">'.$message.'</div>';
     } elseif ($password != $nhaplai) {
         $message = "Mật khẩu và mật khẩu nhập lại không khớp.";
+        echo '<div style="color: red; text-align:center; margin: auto">'.$message.'</div>';
     } else {
        // Thực hiện truy vấn SQL kiểm tra trùng lặp email hoặc số điện thoại
     $checkQuery = "SELECT * FROM user WHERE Email = '$email' OR SDT = '$SDT'";
