@@ -13,18 +13,10 @@
     <div class="row">
         <div class="col">
             <table class="bang">
-<<<<<<< Updated upstream
-            <tr><td>Mã đơn hàng </td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Ngày lập</td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Tên khách hàng </td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Số điện thoại </td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Tổng thanh toán</td><td>   Dữ liệu nè </td></tr>
-                <tr><td> Tình trạng</td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Nơi nhận</td><td>   Dữ liệu nè </td></tr>
-=======
+
                 <?php include "xulydondathang.php"?>
         
->>>>>>> Stashed changes
+
             </table>
         </div>
         <div class="col">
