@@ -1,3 +1,4 @@
+
 <?php
 session_start(); ob_start();
 // Thông tin kết nối cơ sở dữ liệu
@@ -49,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($connect->query($sql) === true) {
             $message = "Đăng ký thành công!";
             echo $message;
-            header("Refresh:1; url=index.php");
+            header("Refresh:2; url=index.php");
             exit();
         } else {
             $message = "Lỗi: " . $sql . "<br>" . $connect->error;
@@ -59,3 +60,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }}
 ?>
+<script>
+            function togglePassword() {
+                var passwordField = document.getElementById("matkhau");
+                var confirmPasswordField = document.getElementById("nhaplai");
+
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                    confirmPasswordField.type = "text";
+                } else {
+                    passwordField.type = "password";
+                    confirmPasswordField.type = "password";
+                }
+            }
+        </script>
