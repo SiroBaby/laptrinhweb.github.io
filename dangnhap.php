@@ -13,16 +13,15 @@
     </div>
     <div class="container">
         <div class="wrapper">
-            <form action="input-box">
+            <form action="xulydangnhap.php" method="post">
                 <h1>DL Store</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Nhập số điện thoại"
+                    <input name="SDT" type="text" placeholder="Nhập số điện thoại"
                     required>
                     <i class='bx bx-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password"
-                    placeholder="Nhập mật khẩu"
+                    <input name="Password" type="password" placeholder="Nhập mật khẩu"
                     required>
                     <i class='bx bxs-lock' ></i>
                 </div>
@@ -30,9 +29,11 @@
                     <label><input type="checkbox">Hãy nhớ tôi</label>
                     <a href="#">Quên mật khẩu</a>
                 </div>
+                   
+
                 <button type="submit" class="btn">Đăng nhập</button>
                 <div class="register-link">
-                    <p>Không có tài khoản? <a href="#">Đăng ký</a></p>
+                    <p>Không có tài khoản? <a href="dangky.php">Đăng ký</a></p>
                 </div>
             </form>
         </div>

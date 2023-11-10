@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "dl store";
+    $database = "dlstore";
 
     $conn = new mysqli($servername, $username, $password, $database);
     if ($conn->connect_error) {
@@ -12,22 +12,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     
-    $sodienthoai = $_POST['sodienthoai'];
-    $matkhau = $_POST['matkhau'];
+    $SDT = $_POST['SDT'];
+    $password = $_POST['Password'];
 
     // Thực hiện xác thực người dùng trong cơ sở dữ liệu
-    $sql = "SELECT * FROM users WHERE sodienthoai = '$sodienthoai' AND matkhau = '$matkhau'";
+    $sql = "SELECT * FROM user WHERE SDT = '$SDT' AND Password = '$password'";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 1) {
-        echo "Đăng nhập thành công!";
+    if ($result->num_rows > 0) {
+       
         header("location:index.php");//Chuyển hướng đến trang chủ
         exit();
     } else {
         // Người dùng không tồn tại hoặc thông tin đăng nhập không đúng
-        echo "Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.";
+        $message="Sai số điện thoại, mật khẩu hoặc tài khoản không tồn tại. Đang quay lại đăng nhập";
+    echo '<div style="color: red; text-align:center; margin: auto">'.$message.'</div>';
+    header("Refresh:2; url=dangnhap.php");
     }
-
     $conn->close();
 }
 ?>

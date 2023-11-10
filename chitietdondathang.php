@@ -16,6 +16,9 @@
                 <tr><td>Mã sản phẩm</td><td>   Dữ liệu nè </td></tr>
                 <tr><td>Giá sản phẩm </td><td>   Dữ liệu nè </td></tr>
                 <tr><td>Thành tiền</td><td>   Dữ liệu nè </td></tr>
+                <tr><td>Loại Vận Chuyển</td><td>   Dữ liệu nè </td></tr>
+                <tr><td></td><td>   Dữ liệu nè </td></tr>
+
             </table>
         </div>
         <div class="col">

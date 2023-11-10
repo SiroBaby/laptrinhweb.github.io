@@ -2,7 +2,9 @@
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="CSS/dangky.css">
+     
     </head>
+    
     <body>
     <div class="row1" >     
         <div class="col1"> 
@@ -11,7 +13,7 @@
             </a>
         </div>
     </div>
-    <form class="dangky" method="" action="">
+    <form class="dangky" method="post" action="xulydangky.php"> 
     <div class="row2">
         <div class="col2">
             <h3>ĐĂNG KÝ </h3>
@@ -20,28 +22,24 @@
     </div>
     <div class="thongtin">
     <div class="row3" >
-        <input type="text" id="hoten" name="hoten" value=""placeholder="Họ và Tên" size="70" required>
+        <input type="text" id="hoten" name="Username" value=""placeholder="Họ và Tên" size="70" required>
     </div>
     <div class="row3">
-        <input type="password" id="matkhau" name="matkhau" value="" placeholder="Mật Khẩu" size="70" required >
+        <input type="password" id="matkhau" name="Password" value="" placeholder="Mật Khẩu" size="70" required >
     </div>
     <div class="row3">
-        <input type="passwword" id="nhaplai" name="nhaplai" value="" placeholder="Nhập Lại Mật Khẩu" size="70" required>
+        <input type="password" id="nhaplai" name="nhaplai" value="" placeholder="Nhập Lại Mật Khẩu" size="70" required>
     </div>
     <div class="row3">
-        <input type="email" id="email" name="email" value="" placeholder="Email" size="70" required  >
+        <input type="email" id="email" name="Email" value="" placeholder="Email" size="70" required  >
     </div>
     <div class="row3">
-        <input type="text" id="sodienthoai" name="sodienthoai" value="" placeholder="Số Điện Thoại" size="70" required>
+        <input type="text" id="sodienthoai" name="SDT" value="" placeholder="Số Điện Thoại" size="70" required>
     </div>
     <div class="row3">
-        <input type="text" id="diachi" name="diachi" value="" placeholder="Địa Chỉ" size="70" required >
+        <button type="submit" id="dangky"> Đăng Ký </button>
     </div>
-    <div class="row3">
-        <div class="col"><button type="submit" id="dangky"> Đăng Ký </button></div>
-    </div>
-    <p><a href="dangnhap.php" id="dangnhap">Đã có tài khoản</a></p>
-    </div>
+    
     </div>
 </form>
     </body>
