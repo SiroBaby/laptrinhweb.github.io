@@ -1,3 +1,10 @@
+<?php
+include ("dbcon.php");
+$tt = new dbcon;
+$sql = "SELECT * FROM sanpham LIMIT 5";
+$kq = $tt -> query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +15,10 @@
     <div class="container" >
           <div class="row" >
             <div class="col" id="head1" >
-                Hotline:00000000
+                Hotline:113114115
             </div>
             <div class="col" >
-                <img src="https://i.pinimg.com/564x/77/ef/75/77ef756d65375e2bed903092c592f063.jpg"  height="200" width="200" >
+                <a href="index.php"><img src="https://i.pinimg.com/564x/77/ef/75/77ef756d65375e2bed903092c592f063.jpg"  height="200" width="200" ></a>
             </div>
             <div class="col" >
                 <div class="row">
@@ -28,8 +35,8 @@
                     </div>
                 </div>
                 <div >
-                    <form>
-                        <input type="text" id="timkiem" name="tiemkiem" placeholder="Tìm Kiếm" required >      
+                    <form method="GET">
+                        <input type="text" id="timkiem" name="timkiem" placeholder="Tìm Kiếm" required >      
                     </form>
                 </div>
             </div>
@@ -40,33 +47,20 @@
             <div class="row">
               <div class="col">
                 <dl id="main-menu">
-                    <dt><a id="link" href="#">Kim Cương Tự Nhiên</a>
+                    <dt><a id="link" href="index.php?id=tunhien">Kim Cương Tự Nhiên</a>
                         <dl class="sub-menu">
-                            <dt><a id="link" href="#">Giá</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">Kiểu Dáng</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            
+                            <dt><a id="link" href="index.php?id=tunhiengiamdan">Giá giảm dần</a></dt>
+                            <dt><a id="link" href="index.php?id=tunhientangdan">Giá tăng dần</a></dt>
                         </dl>
                     </dt>
                 </dl>
               </div>
               <div class="col">
                 <dl id="main-menu">
-                    <dt><a id="link" href="#">Kim Cương Nhân Tạo</a>
+                    <dt><a id="link" href="index.php?id=nhantao">Kim Cương Nhân Tạo</a>
                         <dl class="sub-menu">
-                            <dt><a id="link" href="#">Giá</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">Kiểu Dáng</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>
-                            <dt><a id="link" href="#">...</a></dt>  
+                        <dt><a id="link" href="index.php?id=nhantaogiamdan">Giá giảm dần</a></dt>
+                        <dt><a id="link" href="index.php?id=nhantaotangdan">Giá tăng dần</a></dt>
                         </dl>
                     </dt>
                 </dl>
@@ -81,19 +75,213 @@
         <p id="link1"><b>Sản Phẩm Bán Chạy </b></p>
     </div>
     <div class="conveyor-belt">
-        <img id="pic" src="https://i.pinimg.com/originals/a4/9a/02/a49a028db12303be5d4b1c60cccf0785.png"   >
-        <img id="pic" src="https://i.pinimg.com/originals/a4/9a/02/a49a028db12303be5d4b1c60cccf0785.png"   >
-        <img id="pic" src="https://i.pinimg.com/originals/a4/9a/02/a49a028db12303be5d4b1c60cccf0785.png"   >
-        <img id="pic" src="https://i.pinimg.com/originals/a4/9a/02/a49a028db12303be5d4b1c60cccf0785.png"   >
+        <div class="row">
+        <?php
+            if ($kq -> num_rows > 0) {
+                while ($row = $kq -> fetch_assoc()) {
+                    echo "<div class='col'> <a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'> </a>
+                    <table class='table'>
+                    <tr>
+                        <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                        </tr>
+                        <tr>
+                        <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                    </tr>
+                    </table>
+                    </div>";
+                }
+            }
+
+        ?>
+        </div>
+
       </div>
       <div>
         <p id="link1"><b>Kiểu Dáng Ưa Chuộng</b></p>
     </div>
     <div class="conveyor-belt">
-        <img id="pic" src="https://i.pinimg.com/originals/a4/9a/02/a49a028db12303be5d4b1c60cccf0785.png"   >
-        <img id="pic" src="https://i.pinimg.com/originals/a4/9a/02/a49a028db12303be5d4b1c60cccf0785.png"   >
-        <img id="pic" src="https://i.pinimg.com/originals/a4/9a/02/a49a028db12303be5d4b1c60cccf0785.png"   >
-        <img id="pic" src="https://i.pinimg.com/originals/a4/9a/02/a49a028db12303be5d4b1c60cccf0785.png"   >
+        <div class="row">
+            
+            <?php
+        $sql = "SELECT * FROM sanpham LIMIT 5 OFFSET 5";
+        $kq = $tt -> query($sql);
+            if ($kq -> num_rows > 0) {
+                while ($row = $kq -> fetch_assoc()) {
+                    
+                    echo "<div class='col'> <a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a>
+                    <table class='table'>
+                    <tr>
+                        <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                        </tr>
+                        <tr>
+                        <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                    </tr>
+                    </table> </div>";
+                
+                }
+            }
+
+        ?>
+         
+
+        </div>
     </div >
+    <div>
+        <p id='link1'><b>Danh Sách Sản Phẩm</b></p>
+    </div>
+    <div class="conveyor-belt">
+        <div class="row">
+        <?php
+        if (isset($_GET['timkiem'])) {
+            $timkiem = $_GET['timkiem'];
+            $sql = "SELECT * FROM sanpham WHERE Trong_luong LIKE $timkiem";
+            $kq = $tt->query($sql);
+            if ($kq -> num_rows >0) {
+                while($row = $kq -> fetch_assoc()){
+                   echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a> <table class='table'>
+                   <tr>
+                       <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                       </tr>
+                       <tr>
+                       <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                   </tr>
+                   </table></div>";
+               }
+           }
+        } else {
+        switch (isset($_GET['id']) ? $_GET['id'] : null) {
+            case 'tunhien':
+                $sql = "SELECT * FROM sanpham WHERE Ma_loai = '101'";
+                $kq = $tt -> query($sql);
+                    if ($kq -> num_rows >0) {
+                        while($row = $kq -> fetch_assoc()){
+                            echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a> <table class='table'>
+                            <tr>
+                                <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                                </tr>
+                                <tr>
+                                <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                            </tr>
+                            </table></div>";
+                        }
+                    }
+                break;
+            case 'tunhiengiamdan':
+                $sql = "SELECT * FROM sanpham WHERE Ma_loai = '101' ORDER BY Gia_SP DESC";
+                $kq = $tt -> query($sql);
+                    if ($kq -> num_rows >0) {
+                        while($row = $kq -> fetch_assoc()){
+                            echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a> <table class='table'>
+                            <tr>
+                                <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                                </tr>
+                                <tr>
+                                <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                            </tr>
+                            </table></div>";
+                        }
+                    }
+                    break;
+            case 'tunhientangdan':
+                $sql = "SELECT * FROM sanpham WHERE Ma_loai = '101' ORDER BY Gia_SP ASC";
+                $kq = $tt -> query($sql);
+                    if ($kq -> num_rows >0) {
+                        while($row = $kq -> fetch_assoc()){
+                            echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a> <table class='table'>
+                            <tr>
+                                <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                                </tr>
+                                <tr>
+                                <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                            </tr>
+                            </table></div>";
+                        }
+                    }
+                    break;
+            case 'nhantao':
+                $sql = "SELECT * FROM sanpham WHERE Ma_loai = '102'";
+                $kq = $tt -> query($sql);
+                    if ($kq -> num_rows >0) {
+                         while($row = $kq -> fetch_assoc()){
+                            echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a> <table class='table'>
+                            <tr>
+                                <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                                </tr>
+                                <tr>
+                                <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                            </tr>
+                            </table></div>";
+                        }
+                    }
+                break;
+            case 'nhantaogiamdan':
+                $sql = "SELECT * FROM sanpham WHERE Ma_loai = '102' ORDER BY Gia_SP DESC";
+                $kq = $tt -> query($sql);
+                    if ($kq -> num_rows >0) {
+                        while($row = $kq -> fetch_assoc()){
+                            echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a> <table class='table'>
+                            <tr>
+                                <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                                </tr>
+                                <tr>
+                                <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                            </tr>
+                            </table></div>";
+                        }
+                    }
+                    break;
+            case 'nhantaotangdan':
+                $sql = "SELECT * FROM sanpham WHERE Ma_loai = '102' ORDER BY Gia_SP ASC";
+                $kq = $tt -> query($sql);
+                    if ($kq -> num_rows >0) {
+                        while($row = $kq -> fetch_assoc()){
+                            echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a><table class='table'>
+                            <tr>
+                                <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                                </tr>
+                                <tr>
+                                <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                            </tr>
+                            </table></div>";
+                        }
+                    }
+                    break;
+            case 'nhantaotangdan':
+                $sql = "SELECT * FROM sanpham WHERE Ma_loai = '102' ORDER BY Gia_SP ASC";
+                $kq = $tt -> query($sql);
+                    if ($kq -> num_rows >0) {
+                        while($row = $kq -> fetch_assoc()){
+                            echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a><table class='table'>
+                            <tr>
+                                <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                                </tr>
+                                <tr>
+                                <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                            </tr>
+                            </table></div>";
+                        }
+                    }
+                    break;
+            default:
+                $sql = "SELECT * FROM sanpham";
+                $kq = $tt -> query($sql);
+                    if ($kq -> num_rows >0) {
+                        while($row = $kq -> fetch_assoc()){
+                            echo "<div class='col'><a id='chitietsanpham' name='chitietsanpham' href='chitietsanpham.php?id=".$row['Ma_Sp']."'><img id='pic' src='". $row['Hinh_anh']."'>    </a><table class='table'>
+                            <tr>
+                                <td>Mã SP</td><td>".$row['Ma_Sp']."</td>
+                                </tr>
+                                <tr>
+                                <td>Giá SP</td><td>".$row['Gia_SP']."</td>
+                            </tr>
+                            </table></div>";
+                        }
+                    }
+                break;
+        }
+    }
+        ?>
+        </div>
+    </div>
 </body>
 </html>

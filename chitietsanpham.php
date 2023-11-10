@@ -1,3 +1,8 @@
+<?php
+include ("dbcon.php");
+$tt = new dbcon;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,24 +16,38 @@
     <a href="index.php" id="link">Trang chủ / </a> Chi Tiết Sản Phẩm
     <div class="row">
         <div class="col">
-        <img src="https://i.pinimg.com/564x/77/ef/75/77ef756d65375e2bed903092c592f063.jpg" id="sanpham">
+        <?php
+        if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM sanpham WHERE Ma_SP = '$id'";
+        $kq = $tt -> query($sql);
+        $row = $kq -> fetch_assoc();
+        echo"<div id='pic'><img height='450' width='450' src='". $row['Hinh_anh']."' id='sanpham' ></div>";
+        }
+        ?>
         </div>
         <div class="col">
-            <p> Thông Tin Sản Phẩm </p>
-            <table>
-                <tr><td>Mã sản phẩm</td><td id="">   Dữ liệu nè </td></tr>
-                <tr><td>Giá sản phẩm</td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Trọng lượng </td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Màu sắc</td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Độ tinh khiết </td><td>   Dữ liệu nè </td></tr>
-                <tr><td> Kích thước</td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Hình dạng</td><td>   Dữ liệu nè </td></tr>
-                <tr><td>Mã loại</td><td>   Dữ liệu nè </td></tr>
-            </table>
-            <form method="get" action="">
-                <a href="thanhtoan.php"><button id="mua"> Mua Ngay </button>
+        <div class='info'>   
+        <p> Thông Tin Sản Phẩm </p>
+            <?php
+            if ($kq -> num_rows >0) {
+                    echo "<table>";
+                    echo "<tr><td>Mã sản phẩm:</td><td>".$row['Ma_Sp']."</td></tr>";
+                    echo"<tr><td>Trọng lượng:</td><td>".$row['Trong_luong']."</td></tr>";
+                    echo"<tr><td>Màu sắc:</td><td>".$row['Mau_sac']."</td></tr>";
+                    echo"<tr><td>Độ tinh khiết:</td><td>".$row['Do_tinh_khiet']."</td></tr>";
+                    echo"<tr><td>Kích thước:</td><td>".$row['Kich_thuoc']."</td></tr>";
+                    echo"<tr><td>Hình dạng:</td><td>".$row['Hinh_dang']."</td></tr>";
+                    echo"<tr><td>Mã loại:</td><td>".$row['Ma_loai']."</td></tr>";
+                    echo"</table>";
+                }
+                echo"<p class='price'>Giá sản phẩm: ".$row['Gia_SP']."</p>";
+            ?>
+            <form method="get" action="giohang.php">
+                <button id="mua"> Mua Ngay
                 </a>
             </form>
+            </div> 
         </div>
     </div>
 </body>

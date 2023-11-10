@@ -22,3 +22,18 @@
     width: 200px;
     text-align: center;
 }
+
+.price{
+    color: red;
+    font-size: 40px;
+    font-weight: bolder;
+}
+#pic{
+    
+    margin-left: 20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.info{
+    margin-top : 5%;
+}

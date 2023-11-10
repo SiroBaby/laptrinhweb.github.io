@@ -45,7 +45,8 @@ dl#main-menu dt:hover .sub-menu{
     color:#d8b47d;
     margin-top: 20px;
     margin-left: 110px;
-   
+    font-weight: bold;
+    text-decoration: underline;
 } 
 #pic {
     display: inline-block;
