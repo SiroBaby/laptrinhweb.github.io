@@ -13,38 +13,13 @@
     <div class="row">
         <div class="col">
             <table class="bang">
-                <?php include "xulydondathang.php";
-                echo "table border='1'>
-                <tr>
-                    <th>Mã đơn hàng </th>   
-                    <th>Ngày lập</th>    
-                    <th>Tên khách hàng </th>   
-                    <th>Số điện thoại </th>    
-                    <th>Tổng thanh toán</th>    
-                    <th>Tình trạng</th>    
-                    <th>Nơi nhận</th>   
-                </tr>";
-                $result = laydonhang();
-                if ($result->num_rows > 0){
-                        while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["Ma_DH"] . "</td>";
-                        echo "<td>" . $row["Ngay_lap"] . "</td>";
-                        echo "<td>" . $row["Username"] . "</td>";
-                        echo "<td>" . $row["SDT"] . "</td>";
-                        echo "<td>" . $row["Tong_thanh_toan"] . "</td>";
-                        echo "<td>" . $row["Tinh_trang"] . "</td>";
-                        echo "<td>" . $row["Noi_nhan"] . "</td>";
-                        echo "</tr>";
-                    }
-                }else {
-                    echo "<tr><td colspan='7'>Không có đơn đặt hàng nào.</td></tr>";
-                }
-            
-                echo "</table>";
-            
-                $conn->close();
-                ?>
+            <tr><td>Mã đơn hàng </td><td>   Dữ liệu nè </td></tr>
+                <tr><td>Ngày lập</td><td>   Dữ liệu nè </td></tr>
+                <tr><td>Tên khách hàng </td><td>   Dữ liệu nè </td></tr>
+                <tr><td>Số điện thoại </td><td>   Dữ liệu nè </td></tr>
+                <tr><td>Tổng thanh toán</td><td>   Dữ liệu nè </td></tr>
+                <tr><td> Tình trạng</td><td>   Dữ liệu nè </td></tr>
+                <tr><td>Nơi nhận</td><td>   Dữ liệu nè </td></tr>
             </table>
         </div>
         <div class="col">
