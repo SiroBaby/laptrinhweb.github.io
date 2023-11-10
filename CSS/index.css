@@ -46,31 +46,18 @@ dl#main-menu dt:hover .sub-menu{
     margin-top: 20px;
     margin-left: 110px;
    
-}
-.conveyor-belt {
-    width: 100%; /* Độ rộng của băng chuyền */
-    overflow: hidden;
-    white-space: nowrap;
-    border-bottom: 1px solid ;
-    border-color: #eecfa1;
-  }
-  
-  #pic {
+} 
+#pic {
     display: inline-block;
     margin-right: 5px; /* Khoảng cách giữa các mục */
-    animation: conveyor 10s linear infinite; /* Tên animation, thời gian và chế độ lặp */
     margin-bottom: 10px;
     border: 1px solid #ccc;
     height:300px ; 
     width:300px;
-  }
-  
-  @keyframes conveyor {
-    0% {
-      transform: translateX(100%); /* Di chuyển sang phải 100% */
-    }
-    100% {
-      transform: translateX(-100%); /* Di chuyển sang trái 100% */
-    }
-  }
-  
+}
+
+.conveyor-belt{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
