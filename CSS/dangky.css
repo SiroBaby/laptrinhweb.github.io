@@ -1,0 +1,68 @@
+.dangky{
+    font-family: calibri;
+    text-align: center;
+    font-size: 18;
+    padding-top: 20;
+}
+.thongtin{
+   padding-top: 20;
+}
+.row1{
+    height:150;
+    border-bottom: 2px solid #eecfa1 ;
+    text-align: center;
+}
+.row3{
+    padding-bottom: 25;
+}
+#hoten{
+    border : 0 ;
+    border-bottom : 1px  solid  ;
+    outline : 0;
+}
+#matkhau{
+    border : 0 ;
+    border-bottom : 1px  solid  ;
+    outline : 0;
+}
+#nhaplai{
+    border : 0 ;
+    border-bottom : 1px  solid  ;
+    outline : 0;
+}
+#email{
+    border : 0 ;
+    border-bottom : 1px  solid  ;
+    outline : 0;
+}
+#sodienthoai{
+    border : 0 ;
+    border-bottom : 1px  solid  ;
+    outline : 0;
+}
+#diachi{
+    border : 0 ;
+    border-bottom : 1px  solid  ;
+    outline : 0;
+}
+#dangky{
+   background-color: #eecfa1;
+   border-color:  #eecfa1 ;
+   border-style: dashed;
+   width: 150;
+   height : 40;  
+   font-size: 20 ;
+
+}
+.footer{
+    background-color: #eecfa1;
+    height:200;
+    text-align: center;
+}
+#dangnhap{
+    color:black;
+    text-decoration: none;
+}
+#dangnhap:hover {
+    color:#eecfa1
+}
