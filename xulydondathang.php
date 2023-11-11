@@ -38,32 +38,6 @@ function Laydonhang($page, $itemPerPage)
 
     return $dondathang;
 }
-<<<<<<< Updated upstream
-function laydonhang(){
-global $conn;    
-$query = "SELECT * FROM dondathang";
-$result = $conn->query($query);
-$result = laydonhang();
-if ($result->num_rows > 0){
-        while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row["Ma_DH"] . "</td>";
-        echo "<td>" . $row["Ngay_lap"] . "</td>";
-        echo "<td>" . $row["Username"] . "</td>";
-        echo "<td>" . $row["SDT"] . "</td>";
-        echo "<td>" . $row["Tong_thanh_toan"] . "</td>";
-        echo "<td>" . $row["Tinh_trang"] . "</td>";
-        echo "<td>" . $row["Noi_nhan"] . "</td>";
-        echo "</tr>";
-    }
-}else {
-    echo "<tr><td colspan='7'>Không có đơn đặt hàng nào.</td></tr>";
-}
-
-echo "</table>";
-
-$conn->close();
-=======
 
 function Demdonhang()
 {
@@ -71,7 +45,6 @@ function Demdonhang()
     $username = "root";
     $password = "";
     $dbname = "dlstore";
->>>>>>> Stashed changes
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -99,12 +72,16 @@ if ($dondathang) {
         echo '<tr><td>Tổng thanh toán</td><td>' . $order['Tong_thanh_toan'] . '</td></tr>';
         echo '<tr><td>Tình trạng</td><td>' . $order['Tinh_trang'] . '</td></tr>';
         echo '<tr><td>Nơi nhận</td><td>' . $order['Noi_nhan'] . '</td></tr>';
+        echo '<tr><td>Nơi nhận</td><td>' . $order['Loai_VC'] . '</td></tr>';
+        echo '<tr><td>Nơi nhận</td><td>' . $order['Ma_chi_tiet_DH'] . '</td></tr>';
+        echo '<tr><td colspan="2">&nbsp;</td></tr>';
+    }
     }
 
     // Hiển thị nút Trang trước
     if ($page > 1) {
         $prevPage = $page - 1;
-        echo '<a href="?page=' . $prevPage . '">Trang trước</a>';
+        echo '<a style="text-decoration: none" href="?page=' . $prevPage . '">Trang trước</a>';
     }
 
     echo '<span class="trang">';
@@ -117,7 +94,7 @@ if ($dondathang) {
             if ($i == $page) {
                 echo '<strong>' . $i . '</strong>';
             } else {
-                echo '<a href="?page=' . $i . '">' . $i . '</a>';
+                echo '<a style="text-decoration: none" href="?page=' . $i . '">' . $i . '</a>';
             }
         }
     } else {
@@ -128,11 +105,11 @@ if ($dondathang) {
     // Hiển thị nút Trang tiếp theo
     if ($page < $totalPerPage) {
         $nextPage = $page + 1;
-        echo '<a href="?page=' . $nextPage . '">Trang tiếp theo</a>';
+        echo '<a style="text-decoration: none" href="?page=' . $nextPage . '">Trang tiếp theo</a>';
     }
-} elseif ($page < $totalPerPage) {
+ elseif ($page < $totalPerPage) {
     $nextPage = $page + 1;
-    echo '<a href="?page=' . $nextPage . '">Trang tiếp theo</a>';
+    echo '<a style="text-decoration: none" href="?page=' . $nextPage . '">Trang tiếp theo</a>';
 }
 // Sau khi thêm dữ liệu mới
 // Cập nhật lại số lượng tổng đơn hàng
